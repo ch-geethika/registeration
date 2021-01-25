@@ -1,0 +1,53 @@
+<!-- <div class="container">
+    <h4>LOGIN HERE</h4>
+    <form #ULoginForm='ngForm' (ngSubmit)='UserLogin(user)'>
+        <div class='form-group'>
+            <label for='id'>Email : </label>
+            <input type='text' id='id' name='id' required [(ngModel)]='user.Email'/>
+        </div>
+        <div class='form-group'>
+            <label for='pass'>Password : </label>
+            <input type='text' id='pass' name='pass' required [(ngModel)]='user.Password'/>
+        </div>
+        <button type="submit">LOGIN</button> 
+    </form>
+</div> -->
+      
+
+
+
+<div class="container">
+    <h2><b>Login</b> </h2><br>
+    <hr>
+    <br>
+    
+    <form class="form-horizontal"  #userform='ngForm' (ngSubmit)='UserLogin(user)'>
+      <div class="form-group" [class.has.error]="namecontrol.touched && namecontrol.invalid">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required [(ngModel)]='user.Email'  #namecontrol='ngModel'/>
+          <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
+            Email cannot be blank
+        </span>
+       
+        </div>
+      </div>
+      <div class="form-group"  [class.has.error]="passcontrol.touched && passcontrol.invalid">
+        <label class="control-label col-sm-2" for="pwd">Password:</label>
+        <div class="col-sm-10">          
+          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" required [(ngModel)]='user.Password'  #passcontrol='ngModel'/>
+          <span class='help-block alert-danger' *ngIf='passcontrol.touched && passcontrol.invalid'>
+            password cannot be blank
+        </span>
+        </div>
+      </div>
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit"  [disabled]='userform.invalid' class="btn btn-success">Login</button>&nbsp;&nbsp;
+          <span class="psw">Forgot <a [routerLink]="['/forget']" >password?</a></span>
+
+        </div>
+      </div>
+    </form>
+  
+</div>

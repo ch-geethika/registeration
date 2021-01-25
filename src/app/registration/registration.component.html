@@ -1,0 +1,173 @@
+<p>registration works!</p>
+<div class='container'>
+    <div class="text-center">
+    <h4 ><b>REGISTER</b></h4>
+</div>
+    <br/>
+    <hr/>
+    <form class="form-horizontal" #userform='ngForm'(ngSubmit)='saveUser(user)'>
+     
+<div class='form-group' [class.has.error]="namecontrol.touched && namecontrol.invalid">
+    <label class="control-label col-sm-2" for ='id' >FullName:</label>
+    <div class="col-sm-10"> 
+    <input type='text' id='id' name='id' required [(ngModel)]='user.Name' #namecontrol='ngModel'/>
+    <span class='help-block alert-danger' *ngIf='namecontrol.touched && namecontrol.invalid'>
+        FullName cannot be blank
+    </span>
+    </div>
+
+</div>
+<div class='form-group' [class.has.error]="emailcontrol.touched && emailcontrol.invalid">
+    <label class="control-label col-sm-2" for ='email' >Email:</label>
+    <div class="col-sm-10"> 
+    <input type='text' id='email' name='email' required [(ngModel)]='user.Email' #emailcontrol='ngModel'/>
+
+    <span class='help-block alert-danger' *ngIf='emailcontrol.touched && emailcontrol.invalid'>
+        Email cannot be blank
+    </span>
+    </div>
+</div>
+
+<div class='form-group' [class.has.error]="passcontrol.touched && passcontrol.invalid">
+    <label class="control-label col-sm-2" for ='pass' >Password:</label>
+    <div class="col-sm-10"> 
+    <input type='password' id='pass' name='pass' required [(ngModel)]='user.Password' #passcontrol='ngModel'/>
+    <span class='help-block alert-danger' *ngIf='passcontrol.touched && passcontrol.invalid'>
+        password cannot be blank
+    </span>
+    </div>
+</div>
+
+<div class='form-group' [class.has.error]="mobilecontrol.touched && mobilecontrol.invalid">
+    <label class="control-label col-sm-2" for ='mob' >Mobile:</label>
+    <div class="col-sm-10"> 
+    <input type='text' id='mob' name='mob' required [(ngModel)]='user.MobileNumber' #mobilecontrol='ngModel'/>
+    <span class='help-block alert-danger' *ngIf='mobilecontrol.touched && mobilecontrol.invalid'>
+        mobile number cannot be blank
+    </span>
+    </div>
+</div>
+<div class='form-group' [class.has.error]="citycontrol.touched && citycontrol.invalid">
+    <label class="control-label col-sm-2" for ='city' >City:</label>
+    <div class="col-sm-10"> 
+    <input type='text' id='city' name='city' required [(ngModel)]='user.City' #citycontrol='ngModel'/>
+     &nbsp;&nbsp;&nbsp;&nbsp;
+    </div>
+</div>
+<div class='form-group'>
+    <label class="control-label col-sm-2"  for ='dob' >DOB:</label>
+    <div class="col-sm-10"> 
+    <input type='date' id='dob' name='dob' required [(ngModel)]='user.DateOfBirth' #dobcontrol='ngModel'/>
+    <br/>
+    </div>
+</div>
+<div class='form-group'>
+    <label class="control-label col-sm-2" for ='state' >State:</label>
+    <div class="col-sm-10"> 
+    <input type='text' id='state' name='state' required [(ngModel)]='user.State' #statecontrol='ngModel'/>
+    <span class='help-block alert-danger' *ngIf='citycontrol.touched && citycontrol.invalid'>
+        state cannot be blank
+    </span>
+    </div>
+</div>
+<div class='form-group' class="col-sm-10" [class.has.error]="qualcontrol.touched && qualcontrol.invalid" >
+    <label class="control-label col-sm-2" for ='qual' >Qualification:</label>
+    <div class="col-sm-10"> 
+    <input type='text' id='qual' name='qual' required [(ngModel)]='user.Qualification' #qualcontrol='ngModel'/>
+    <span class='help-block alert-danger' *ngIf='qualcontrol.touched && qualcontrol.invalid'>
+        qualification cannot be blank
+    </span>
+    </div>
+</div>
+<br/>
+<br />
+<div class='form-group' class="col-sm-10" [class.has.error]="yearcontrol.touched && yearcontrol.invalid" >
+    <label class="control-label col-sm-2" for ='year' >Year Of Passing:</label>
+    <div class="col-sm-10"> 
+    <input type='text' id='year' name='year' required [(ngModel)]='user.YearOfPassing' #yearcontrol='ngModel'/>
+    <span class='help-block alert-danger' *ngIf='yearcontrol.touched && yearcontrol.invalid'>
+       YearOfPassing cannot be blank
+    </span>
+    </div>
+</div>
+<br/>
+<br/>
+
+
+
+
+<div class="form-group">        
+    <div class="col-sm-offset-2 col-sm-10">
+    <button type='submit' [disabled]='userform.invalid' >Register</button>
+</div>
+</div>
+    </form>
+</div> 
+<!-- 
+
+
+
+
+
+
+<div class="container">
+    <h2>Register form</h2>
+    <form class="form-horizontal" action="/action_page.php">
+    <div class="form-group">
+        <label class="control-label col-sm-2" for="Name">Name:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
+        </div>
+       </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="Mobile">Mobile:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="mobile" placeholder="Enter mobile" name="mobile">
+        </div>
+      </div>
+       <div class="form-group">
+        <label class="control-label col-sm-2" for="DateofBirth">DateofBirth:</label>
+        <div class="col-sm-10">          
+          <input type="date" class="form-control" id="dateofbirth" placeholder="Enter Date" name="dateofbirth">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="City">City:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="city" placeholder="Enter City" name="city">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="City">State:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="state" placeholder="Enter State" name="state">
+        </div>
+      </div>
+       <div class="form-group">
+        <label class="control-label col-sm-2" for="Qualification">Qualification:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="qualification" placeholder="Enter Qualification" name="qualification">
+        </div>
+      </div>
+       <div class="form-group">
+        <label class="control-label col-sm-2" for="YearOfCompletion">YearOfCompletion:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="yearofcompletion" placeholder="Enter Year" name="yearofcompletion">
+        </div>
+      </div>
+      
+      <div class="form-group">        
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-default">Register</button>
+        </div>
+      </div>
+    </form>
+  </div>
+   -->
