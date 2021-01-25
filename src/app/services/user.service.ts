@@ -27,7 +27,7 @@ url='http://localhost:54789/api/default';
    return this.http.post<IAdmin>(this.url+"PostAdminLogin/",admin,this.httpOptions);
  }
  addUser(user:IUser):Observable<IUser>{​​​​  
-  return this.http.post<IUser>(this.url + "/PostUser",user,this.httpOptions);
+  return this.http.post<IUser>(this.url + "/Postregister",user,this.httpOptions);
 }​​​​
 PutPassword(user:IUser):Observable<IUser>{
   return this.http.put<IUser>(this.url +"/PutUser",user,this.httpOptions);

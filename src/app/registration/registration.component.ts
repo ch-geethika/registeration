@@ -29,7 +29,7 @@ export class RegistrationComponent implements OnInit {
       alert("Record Added");     
      this.route.navigate(['/']);   
    }​​​​,error=>{
-    alert(error.error.Message);
+    alert(error.Message);
    }); 
  }​​​​
 
