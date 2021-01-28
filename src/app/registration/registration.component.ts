@@ -12,7 +12,7 @@ import {UserServiceService} from '../services/user.service';
 export class RegistrationComponent implements OnInit {
   user:IUser=
   {
-   Id:null,
+    Id:null,
     Email:null,
     Password:null,
     Name:null,DateOfBirth:null,
